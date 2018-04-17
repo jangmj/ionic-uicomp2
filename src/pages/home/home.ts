@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {BindPage} from "../bind/bind";
+import {ComponentPage} from "../component/component";
 
 @Component({
   selector: 'page-home',
@@ -7,7 +9,7 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
   items = [
-    {"id":1, name:"첫번째item"},
+    {"id":1, name:"Component"},
     {"id":2, name:"두번째item"},
   ];
 
@@ -21,7 +23,10 @@ export class HomePage {
 
   //event handler
   itemSelected(item) {
-    alert(item.id + " " + item.name);
+    //alert(item.id + " " + item.name);
+    if(item.id === 1) {
+      this.navCtrl.push("ComponentPage");
+    }
   }
 
   //
@@ -31,7 +36,7 @@ export class HomePage {
       return false;
     } else {
       //alert(event.target.textContent + " " + event.clientX + " " + event.clientY);
-      this.navCtrl.push('bindPage',{name:this.userName});
+      this.navCtrl.push('BindPage',{name:this.userName});
     }
   }
 }

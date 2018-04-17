@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage({name:'bindPage'})
+@IonicPage()
 @Component({
   selector: 'page-bind',
   templateUrl: 'bind.html',
