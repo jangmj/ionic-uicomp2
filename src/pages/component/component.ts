@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ActionSheetController, IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
+import {ActionSheetController, IonicPage, ModalController, NavController, NavParams, Platform} from 'ionic-angular';
 
 /**
  * Generated class for the ComponentPage page.
@@ -15,7 +15,8 @@ import {ActionSheetController, IonicPage, NavController, NavParams, Platform} fr
 })
 export class ComponentPage {
 
-  constructor(public navCtrl: NavController, public actionsheetCtrl: ActionSheetController, public platform:Platform, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public actionsheetCtrl: ActionSheetController,
+              public modalCtrl:ModalController, public platform:Platform, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -67,5 +68,17 @@ export class ComponentPage {
       ]
     });
     actionSheet.present();
+  }
+
+  modal() {
+    let modal = this.modalCtrl.create("ModalPage");
+    modal.onDidDismiss(data => {
+      console.log(data);
+    });
+    modal.present();
+  }
+
+  slide() {
+    this.navCtrl.push('slidePage');
   }
 }

@@ -10,7 +10,8 @@ import {ComponentPage} from "../component/component";
 export class HomePage {
   items = [
     {"id":1, name:"Component"},
-    {"id":2, name:"두번째item"},
+    {"id":2, name:"Modal"},
+    {"id":3, name:"Slide"},
   ];
 
   disabledSwitch=false;
@@ -26,6 +27,12 @@ export class HomePage {
     //alert(item.id + " " + item.name);
     if(item.id === 1) {
       this.navCtrl.push("ComponentPage");
+    }
+    else if(item.id === 2) {
+      this.navCtrl.push("ModalPage");
+    }
+    else if(item.id === 3) {
+      this.navCtrl.push("SlidePage");
     }
   }
 
