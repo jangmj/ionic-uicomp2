@@ -5,6 +5,7 @@ import {
 } from 'ionic-angular';
 import {AccountInterface} from "../../interfaces/account";
 import {LoaderProvider} from "../../providers/loader/loader";
+import {EmailComposer} from "@ionic-native/email-composer";
 
 /**
  * Generated class for the ComponentPage page.
