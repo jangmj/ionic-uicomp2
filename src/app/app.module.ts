@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoaderProvider } from '../providers/loader/loader';
+import {EmailComposer} from "@ionic-native/email-composer";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoaderProvider } from '../providers/loader/loader';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LoaderProvider
+    LoaderProvider,
+    EmailComposer
   ]
 })
 export class AppModule {}
